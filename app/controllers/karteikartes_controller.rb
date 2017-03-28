@@ -29,6 +29,7 @@ class KarteikartesController < ApplicationController
   # POST /karteikartes.json
   def create
     @karteikarte = Karteikarte.new(karteikarte_params)
+    @karteikarte.user = current_user
 
     respond_to do |format|
       if @karteikarte.save
